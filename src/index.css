@@ -1,0 +1,474 @@
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: #a8a8a8;
+  --border: #363636;
+  --field-bg: #000000;
+  --blue: #0064e0;
+  --blue-muted: #1a3f70;
+  --link-blue: #4599ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ---------- Left promo side ---------- */
+.left {
+  flex: 1;
+  border-right: 1px solid #1a1a1a;
+  padding: 60px 40px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand {
+  position: absolute;
+  top: 60px;
+  left: 56px;
+}
+
+.brand svg {
+  width: 76px;
+  height: 76px;
+}
+
+.headline {
+  max-width: 760px;
+  text-align: center;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.75;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+}
+
+.accent {
+  background: linear-gradient(90deg, #ff4b2b 0%, #ff2d6f 45%, #e0209b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+}
+
+/* ---------- Collage ---------- */
+.collage {
+  position: relative;
+  margin-top: 56px;
+  width: 400px;
+  height: 340px;
+  transform-origin: top center;
+}
+
+.story {
+  position: absolute;
+  width: 178px;
+  height: 300px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #6a3093, #a044ff);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+.story-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-left {
+  left: 6px;
+  top: 30px;
+  transform: rotate(-11deg);
+  z-index: 1;
+  background: linear-gradient(160deg, #ff0080, #7928ca);
+}
+
+.story-right {
+  left: 214px;
+  top: 40px;
+  transform: rotate(10deg);
+  z-index: 2;
+  background: linear-gradient(160deg, #f7971e, #ffd200);
+}
+
+.story-mid {
+  left: 108px;
+  top: 0;
+  width: 186px;
+  height: 330px;
+  z-index: 3;
+  background: linear-gradient(160deg, #11998e, #38ef7d);
+}
+
+.story-progress {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.story-footer {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reply-pill {
+  flex: 1;
+  height: 24px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+}
+
+.reply-heart {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.reply-heart svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* decorations */
+.sticker {
+  position: absolute;
+  top: -6px;
+  left: 62px;
+  z-index: 5;
+  display: flex;
+  gap: 2px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1;
+  transform: rotate(-9deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.cf-badge {
+  position: absolute;
+  top: 92px;
+  right: -2px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0 9px;
+  height: 26px;
+  border-radius: 999px;
+  background: #1ed760;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.big-heart {
+  position: absolute;
+  left: -30px;
+  bottom: 118px;
+  width: 56px;
+  height: 56px;
+  z-index: 5;
+  transform: rotate(-14deg);
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.5));
+}
+
+.avatar-ring {
+  position: absolute;
+  right: -6px;
+  bottom: 62px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  padding: 3px;
+  z-index: 5;
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+}
+
+.avatar-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #000;
+  background: linear-gradient(150deg, #43cea2, #185a9d);
+}
+
+.avatar-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Right login side ---------- */
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 26px;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.field {
+  position: relative;
+  height: 60px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  background: var(--field-bg);
+  transition: border-color 0.15s ease;
+}
+
+.field:focus-within {
+  border-color: #666;
+}
+
+.field-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 15px;
+  pointer-events: none;
+  transition: all 0.12s ease;
+}
+
+.field.floated .field-label {
+  top: 16px;
+  transform: none;
+  font-size: 11px;
+}
+
+.field-input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 38px;
+  padding: 0 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.login-btn {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 14px;
+  background: var(--blue-muted);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: not-allowed;
+  margin-top: 8px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.login-btn.active {
+  background: var(--blue);
+  color: #fff;
+  cursor: pointer;
+}
+
+.login-btn.active:hover {
+  background: #0057c2;
+}
+
+.forgot {
+  align-self: center;
+  margin-top: 22px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.fb-btn {
+  height: 52px;
+  margin-top: 40px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.fb-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.create-btn {
+  height: 52px;
+  margin-top: 12px;
+  border: 1px solid var(--link-blue);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--link-blue);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.create-btn:hover {
+  background: rgba(69, 153, 255, 0.08);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 26px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1200px) {
+  .left {
+    padding: 120px 24px 40px;
+  }
+  .brand {
+    top: 36px;
+    left: 28px;
+  }
+  .brand svg {
+    width: 60px;
+    height: 60px;
+  }
+  .collage {
+    transform: scale(0.85);
+    height: 290px;
+  }
+}
+
+@media (max-width: 900px) {
+  .page {
+    flex-direction: column;
+  }
+  .left {
+    border-right: none;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 28px 20px 16px;
+    justify-content: flex-start;
+  }
+  .brand {
+    position: static;
+    align-self: flex-start;
+  }
+  .brand svg {
+    width: 52px;
+    height: 52px;
+  }
+  .headline {
+    margin-top: 24px;
+    line-height: 1.4;
+  }
+  .collage {
+    margin-top: 28px;
+    transform: scale(0.7);
+    height: 240px;
+  }
+  .right {
+    padding: 32px 20px 48px;
+  }
+  .login-box {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 480px) {
+  .left {
+    padding: 20px 16px 8px;
+  }
+  .collage {
+    transform: scale(0.58);
+    height: 200px;
+  }
+  .login-title {
+    font-size: 22px;
+  }
+  .field,
+  .login-btn,
+  .fb-btn,
+  .create-btn {
+    border-radius: 12px;
+  }
+  .fb-btn {
+    margin-top: 28px;
+  }
+}
